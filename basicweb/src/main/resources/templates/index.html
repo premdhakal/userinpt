@@ -5,8 +5,12 @@
 </head>
 <body>
 
-<h2>Basic Web</h2>
-<p>This example does not really do anything.</p>
-
+<h2>User Input</h2>
+<form th:object=${newCar} th:action="@{'/home'}" action="#" method="POST">
+	<input th:field="*{carName}" type="text" id="newMessageText" name="newMessageText">
+	<input type="submit" id="Submit Button" value="Submit">
+</form>
+<!-- Displaying It Back -->
+<p th:each="oneCar :${carsList}" th:text="${oneCar}">
 </body>
 </html>
